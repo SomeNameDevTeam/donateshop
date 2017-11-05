@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
 
   def update
     category = Category[params[:id]] || Category.new
-    category.url ||= params[:id]
+    category.id ||= params[:id]
     category.new? ? can?(:create, Category) : can?(:edit, :category)
     process_with_service(Category::Update, form_params, category: category)
   end
