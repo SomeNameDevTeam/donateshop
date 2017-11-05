@@ -9,7 +9,7 @@ Sequel.migration do
     create_table :users do
       primary_key :id
 
-      column :email, :text, null: true, index: true
+      column :email, :text, null: true, index: true, unique: true
       column :password_digest, :text, null: true
       column :role, :user_role, null: false, default: "user"
     end

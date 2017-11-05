@@ -11,7 +11,9 @@ class User::Form < Polist::Service::Form
   validate :uniq_email
 
   def uniq_email
-    return unless User.exclude(id: user.id).first(email: email)
+    scope = User.dataset
+    scope = scope.exclude(id: user.id) if user&.id
+    return unless scope.first(email: email)
     errors.add :email, :not_unique
   end
 end

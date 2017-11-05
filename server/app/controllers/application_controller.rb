@@ -29,12 +29,16 @@ class ApplicationController < ActionController::API
   end
 
   memoize def current_user
-    user_session.user
+    user_session&.user
+  end
+
+  def process_with_service!(service, *params)
+    result = service.run(*params)
+    render json: result.response.to_camelback_keys, status: result.status
   end
 
   def process_with_service(service, *params)
     options = params.reduce({}, &:merge)
-    result = service.run(options)
-    render json: result.response.to_camelback_keys, status: result.status
+    process_with_service!(service, options)
   end
 end
