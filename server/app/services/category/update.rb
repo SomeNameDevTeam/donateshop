@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Category::Update < ApplicationService
-  # FIXME: add modifiers support
   class Form < Polist::Service::Form
     attribute :name
     attribute :category
@@ -9,12 +8,12 @@ class Category::Update < ApplicationService
     validates :name, presence: true
   end
 
+  delegate :category, to: :form
+
   def call
     validate!
 
-    category = form.category || Category.new(url: url)
-
-    category.update(**provided_attributes.except(:category), modifiers: Sequel.pg_array([]))
+    category.update(provided_attributes.except(:category))
     success!(category: render_model(category), status: :ok)
   end
 

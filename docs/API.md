@@ -187,9 +187,29 @@ attributes:
 }
 ```
 
+It also renders following:
+```
+{
+  id: string,
+  modifiers: {
+    id: string,
+    name: string,
+    possibleValues: string[]
+  }[],
+}
+```
+
 ## CRUDI Modifiers (/categories/:id/modifiers)
 
 Contains possible values
+
+attributes:
+```
+{
+  name: string,
+  possibleValues: string[]
+}
+```
 
 ## CRUDI Articles (/categories/:id/articles)
 
