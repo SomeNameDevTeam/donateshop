@@ -4,7 +4,7 @@ class Modifier::Update < ApplicationService
   class Form < Polist::Service::Form
     attribute :modifier
     attribute :name
-    attribute :possible_values, default: -> { [name, ""] }
+    attribute :possible_values, default: -> { [id, ""] }
 
     validates :name, presence: true
   end
