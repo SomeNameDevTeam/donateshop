@@ -27,7 +27,7 @@ end
 
 group :test do
   gem "database_cleaner"
-  gem "rspec"
+  gem "rspec-rails"
   gem "rubocop"
   gem "rubocop-rspec"
   gem "spring-commands-rspec"
