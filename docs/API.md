@@ -175,7 +175,17 @@ Response:
   }
   ```
 
-## CRUDI Categories
+## RUDI Categories
+
+Use update to create category. Use human-readable id
+
+attributes:
+```
+{
+  name: string,
+  modifiers: string[],
+}
+```
 
 ## CRUDI Modifiers (/categories/:id/modifiers)
 

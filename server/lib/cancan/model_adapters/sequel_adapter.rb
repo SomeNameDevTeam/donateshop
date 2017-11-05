@@ -7,6 +7,7 @@ class CanCan::ModelAdapters::SequelAdapter < CanCan::ModelAdapters::AbstractAdap
 
   # Override if you need custom find behavior
   def self.find(model_class, id)
+    return model_class.custom_lookup(id) if model_class.respond_to?(:custom_lookup)
     model_class.first!(model_class.primary_key => id)
   end
 
