@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
+    @categories = @categories.eager(:modifiers).all
     render json: { categories: render_models(@categories), status: :ok }
   end
 
