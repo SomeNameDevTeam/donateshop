@@ -40,7 +40,10 @@ GEM
       tzinfo (~> 1.1)
     arel (8.0.0)
     ast (2.3.0)
+    awrence (1.0.0)
+    bcrypt (3.1.11)
     builder (3.2.3)
+    cancancan (2.0.0)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.2)
@@ -69,6 +72,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
+    memoist (0.16.0)
     method_source (0.9.0)
     mini_mime (0.1.4)
     mini_portile2 (2.3.0)
@@ -81,6 +85,11 @@ GEM
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.21.0)
+    plissken (1.2.0)
+    polist (0.2.0)
+      activemodel (>= 3.0)
+      plissken (>= 0.3)
+      tainbox
     powerpack (0.1.1)
     pry (0.11.2)
       coderay (~> 1.1.0)
@@ -155,6 +164,9 @@ GEM
       activemodel
       railties (>= 3.2.0)
       sequel (>= 3.28, < 5.0)
+    sequel_secure_password (0.2.15)
+      bcrypt (>= 3.1, < 4.0)
+      sequel (>= 4.1.0, < 6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
@@ -169,6 +181,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    tainbox (2.0.0)
+      activesupport
     thor (0.20.0)
     thread_safe (0.3.6)
     tzinfo (1.2.4)
@@ -182,11 +196,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awrence
+  cancancan
   database_cleaner
   factory_bot_rails
   jbuilder
   listen (>= 3.0.5, < 3.2)
+  memoist
   pg
+  polist
   pry-rails
   puma
   rails
@@ -195,10 +213,10 @@ DEPENDENCIES
   rubocop
   rubocop-rspec
   sequel-rails
+  sequel_secure_password
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
-  tzinfo-data
 
 BUNDLED WITH
    1.16.0

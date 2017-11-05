@@ -4,11 +4,15 @@ AllCops:
   TargetRubyVersion: 2.4
   Exclude:
     - bin/
+    - db/schema.rb
 
 Metrics/LineLength:
   Max: 100
-  AlowHeredoc: false
+  AllowHeredoc: false
   AllowURI: false
+
+Style/AndOr:
+  Enabled: false
 
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
