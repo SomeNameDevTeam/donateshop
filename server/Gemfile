@@ -2,11 +2,16 @@
 
 source "https://rubygems.org"
 
+gem "awrence"
+gem "cancancan"
 gem "jbuilder"
+gem "memoist"
 gem "pg"
+gem "polist"
 gem "puma"
 gem "rails"
 gem "sequel-rails"
+gem "sequel_secure_password"
 
 group :production do
   gem "redis", "~> 3.0"
@@ -27,11 +32,8 @@ end
 
 group :test do
   gem "database_cleaner"
-  gem "rspec"
+  gem "rspec-rails"
   gem "rubocop"
   gem "rubocop-rspec"
   gem "spring-commands-rspec"
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
